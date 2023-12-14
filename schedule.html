@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AMBMUN | Schedule</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/ambmunlogo.png">
+</head>
+
+<body style=" background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom; ">
+    <div class="navbar" style="position: relative">
+        <div class="navbarcontent">
+            <div class="subnavbar left">
+                <div id="navbarleft" style="margin-left: 200px; display: flex; align-items: center;">
+                    <a>
+                        <img src="images/ambmunlogo.png" alt="AMBMUN Logo">
+                    </a>
+                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="30" x2="0.5" stroke="black" />
+                    </svg>
+                    <a>
+                        <img src="images/instagramlogo.png">
+                    </a>
+                </div>
+            </div>
+            <div class="subnavbar right">
+                <div id="navbarright" style="margin-bottom: 5px;">
+                    <a href="index.html" style="margin-right: 50px; font-weight: 300;">HOME</a>
+                    <div>
+                        <span style="margin-right: 50px; font-weight: 300;"
+                            onmouseover="this.children[0].style.display = 'block';">DETAILS
+                            <div style="display: none; max-width: 100px; position: absolute; margin-top: 10px; margin-left: -35px;"
+                                onmouseleave="this.style.display = 'none';">
+                                <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
+                                <a href="" class="dropdownoptions" style="border-top: none;">RULES</a>
+                                <a href="" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
+                            </div>
+                        </span>
+                    </div>
+                    <a href="about.html" style="margin-right: 50px; font-weight: 300;">ABOUT</a>
+                    <a href="contact.html" style="margin-right: 50px; font-weight: 300;">CONTACT</a>
+                    <a href="faq.html" style="margin-right: 50px; font-weight: 300;">FAQ</a>
+                </div>
+                <svg style="margin-left: 0px; margin-right: 50px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="30" x2="0.5" stroke="black" />
+                </svg>
+                <a href="events.html"
+                    style="margin-right: 200px; margin-bottom: 5px; font-weight: bold; font-family: inter;">REGISTER</a>
+            </div>
+        </div>
+        <br>
+        <hr id="navbarseparator" style="margin-left: 100px; margin-right: 100px; border-top: 1px solid #dbdbdb;">
+    </div>
+    
+    <div class="root">
+        <div class="subroot" style="padding: 20px; padding-bottom: 200px;">
+            <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">Schedule</h2>
+            <div class="centerer">
+                <img id="day1" src="images/Schedule/Day 1_none.png" style="margin-right: 150px;">
+                <img id="day2" src="images/Schedule/Day 2_none.png">
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        const el = document.querySelector(".navbar")
+        const observer = new IntersectionObserver(
+            ([e]) => {e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1;},
+            { threshold: [1] }
+        );
+
+        observer.observe(el);
+
+var day1 = document.getElementById("day1");
+var day2 = document.getElementById("day2");
+        setInterval(function() {
+            var cd = new Date();
+            if(cd.getDate() == 1 && cd.getMonth() == 2 && cd.getFullYear() == 2024) {
+                day2.src = "images/Schedule/Day 2_none.png";
+                if(cd.getHours() == 15 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                    day1.src = "images/Schedule/Day 1_first_pending.png";
+                }
+                else if(cd.getHours() == 15 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                    day1.src = "images/Schedule/Day 1_second_pending.png";
+                }
+                else if(cd.getHours() == 16 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                    day1.src = "images/Schedule/Day 1_third_pending.png";
+                }
+                else if(cd.getHours() == 16 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                    day1.src = "images/Schedule/Day 1_fourth_pending.png";
+                }
+                else {
+                    day1.src = "images/Schedule/Day 1_complete.png";
+                }
+            }
+            else if(cd.getDate() == 2 && cd.getMonth() == 2 && cd.getFullYear() == 2024) {
+                day1.src = "images/Schedule/Day 1_complete.png";
+                if(cd.getHours() == 15 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                    day2.src = "images/Schedule/Day 2_first_pending.png";
+                }
+                else if(cd.getHours() == 15 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                    day2.src = "images/Schedule/Day 2_second_pending.png";
+                }
+                else if(cd.getHours() == 16 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                    day2.src = "images/Schedule/Day 2_third_pending.png";
+                }
+                else if(cd.getHours() == 16 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                    day2.src = "images/Schedule/Day 2_fourth_pending.png";
+                }
+                else {
+                    day2.src = "images/Schedule/Day 2_complete.png";
+                }
+            }
+            else {
+                console.log(cd);
+                console.log("Date:", cd.getDate(), cd.getDate() == 1)
+                console.log("Month:", cd.getMonth(), cd.getMonth() == 3)
+                console.log("Year:", cd.getFullYear(), cd.getFullYear() == 2024)
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

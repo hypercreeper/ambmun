@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AMBMUN | Contact</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/ambmunlogo.png">
+</head>
+
+<body
+    style=" background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom; ">
+    <div class="navbar" style="position: relative">
+        <div class="navbarcontent">
+            <div class="subnavbar left">
+                <div id="navbarleft" style="margin-left: 200px; display: flex; align-items: center;">
+                    <a>
+                        <img src="images/ambmunlogo.png" alt="AMBMUN Logo">
+                    </a>
+                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="30" x2="0.5" stroke="black" />
+                    </svg>
+                    <a>
+                        <img src="images/instagramlogo.png">
+                    </a>
+                </div>
+            </div>
+            <div class="subnavbar right">
+                <div id="navbarright" style="margin-bottom: 5px;">
+                    <a href="index.html" style="margin-right: 50px; font-weight: 300;">HOME</a>
+                    <div>
+                        <span style="margin-right: 50px; font-weight: 300;"
+                            onmouseover="this.children[0].style.display = 'block';">DETAILS
+                            <div style="display: none; max-width: 100px; position: absolute; margin-top: 10px; margin-left: -35px;"
+                                onmouseleave="this.style.display = 'none';">
+                                <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
+                                <a href="" class="dropdownoptions" style="border-top: none;">RULES</a>
+                                <a href="" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
+                            </div>
+                        </span>
+                    </div>
+                    <a href="about.html" style="margin-right: 50px; font-weight: 300;">ABOUT</a>
+                    <a href="contact.html" style="margin-right: 50px; font-weight: 300;">CONTACT</a>
+                    <a href="faq.html" style="margin-right: 50px; font-weight: 300;">FAQ</a>
+                </div>
+                <svg style="margin-left: 0px; margin-right: 50px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.5" y1="30" x2="0.5" stroke="black" />
+                </svg>
+                <a href="events.html"
+                    style="margin-right: 200px; margin-bottom: 5px; font-weight: bold; font-family: inter;">REGISTER</a>
+            </div>
+        </div>
+        <br>
+        <hr id="navbarseparator" style="margin-left: 100px; margin-right: 100px; border-top: 1px solid #dbdbdb;">
+    </div>
+
+    <div class="root">
+        <div class="subroot" style="padding: 20px; padding-bottom: 400px;">
+            <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">Contact Us</h2>
+            <p style="margin-left: 85px;">If you would like to get any more information, please contact us at <a href="mailto:ambmun@amb.sch.ae" style="text-decoration: underline;">ambmun@amb.sch.ae</a>
+            </p>
+            <table style="margin-left: 80px;">
+                <tr>
+                    <td style="padding-right: 0px;">
+                        <img src="images/Kasab.png" style="width: 100px; height: 100px; margin-right: 25px;">
+                    </td>
+                    <td style="text-align: left; margin-left: -25px;">
+                        <p style="font-family: inter; font-weight: 400; font-size: 18px;">Abdulrahman Alkasab<br>
+                            <span style="font-family: inter; font-weight: 200; font-size: 14px;">Secretary-General</span>
+                        </p>
+                        <p style="font-family: inter; font-weight: 300; font-size: 14px;">+971 56 123 4567<br>
+                            <span
+                                style="font-family: inter; font-weight: 300; font-size: 14px;">abdulrahman.alkasab@amb.sch.ae</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 0px;">
+                        <img src="images/dana placeholder.png" style="width: 100px; height: 100px; margin-right: 25px;">
+                    </td>
+                    <td style="text-align: left;">
+                        <p style="font-family: inter; font-weight: 400; font-size: 18px;">Dana Ismail<br>
+                            <span style="font-family: inter; font-weight: 200; font-size: 14px;">Deputy Secretary-General</span>
+                        </p>
+                        <p style="font-family: inter; font-weight: 300; font-size: 14px;">+971 56 123 4567<br>
+                            <span style="font-family: inter; font-weight: 300; font-size: 14px;">dana.ismail@amb.sch.ae</span>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        const el = document.querySelector(".navbar")
+        const observer = new IntersectionObserver(
+            ([e]) => { e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1; },
+            { threshold: [1] }
+        );
+
+        observer.observe(el);
+    </script>
+</body>
+
+</html>
