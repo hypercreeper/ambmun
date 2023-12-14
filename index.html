@@ -50,7 +50,7 @@
                     viewBox="0 0 1 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0.5" y1="30" x2="0.5" stroke="black" />
                 </svg>
-                <a href="events.html"
+                <a href=""
                     style="margin-right: 200px; margin-bottom: 5px; font-weight: bold; font-family: inter;">REGISTER</a>
             </div>
         </div>
@@ -252,15 +252,43 @@
 
 
     <script>
-        const el = document.querySelector(".navbar")
-        const observer = new IntersectionObserver(
-            ([e]) => { e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1; },
-            { threshold: [1] }
-        );
-
-        observer.observe(el);
-
+        const el = document.getElementsByClassName("navbar")[0];
+        window.addEventListener("scroll", (event) => {
+            let scroll = this.scrollY;
+            // console.log(scroll);
+            el.classList.toggle("issticky", scroll > 0);
+            document.getElementById("navbarseparator").hidden = scroll > 0;
+        });
     </script>
+    <footer>
+        <div style="display: flex; justify-content: center;">
+            <div class="flexcontainer" style="color: white; margin-left: 25px; margin-right: 25px;">
+                <div style="flex-basis: calc( 100% / 2);">
+                    <div style="display: flex; align-items: center;">
+                        <a>
+                            <img src="images/ambmunlogowhite.png" alt="AMBMUN Logo" width="60" height="60">
+                        </a>
+                        <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="0.5" y1="30" x2="0.5" stroke="white" />
+                        </svg>
+                        <a>
+                            <img src="images/instagramlogowhite.png">
+                        </a>
+                    </div>
+                    <p>Al Mawakeb Al Barsha<br>
+                        Dubai, UAE</p>
+                    <p>&copy; 2023 AMIC</p>
+                </div>
+                <div style="flex-basis: calc( 100% / 2);">
+                    <p class="footertext">Al Mawakeb Al Barsha Model United Nations</p>
+                    <p class="footertext">an exclusive program for highly motivated high school students, focusing on
+                        technology, innovation, and research to foster scientific leadership and provide immersive
+                        experiences.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
