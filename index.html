@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/ambmunlogo.png">
 </head>
-
+<!-- This page contains dynamic elements in both HTML and JS please follow the comments for more info -->
 <body>
     <div class="navbar">
         <div class="navbarcontent">
@@ -17,8 +17,8 @@
                     <a>
                         <img src="images/ambmunlogo.png" alt="AMBMUN Logo">
                     </a>
-                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="0.5" y1="30" x2="0.5" stroke="black" />
                     </svg>
                     <a>
@@ -36,7 +36,8 @@
                                 onmouseleave="this.style.display = 'none';">
                                 <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
                                 <a href="rules.html" class="dropdownoptions" style="border-top: none;">RULES</a>
-                                <a href="" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
+                                <a href="committees.html" class="dropdownoptions"
+                                    style="border-top: none;">COMMITTEES</a>
                             </div>
                         </span>
                     </div>
@@ -48,19 +49,24 @@
                     xmlns="http://www.w3.org/2000/svg">
                     <line x1="0.5" y1="30" x2="0.5" stroke="black" />
                 </svg>
-                <a href="events.html"
-                    style="margin-right: 200px; margin-bottom: 5px; font-weight: bold; font-family: inter;">REGISTER</a>
+                <a href="events.html" style="margin-right: 200px; margin-bottom: 5px; font-weight: bold; font-family: inter;">REGISTER</a>
             </div>
         </div>
         <br>
         <hr id="navbarseparator" style="margin-left: 100px; margin-right: 100px; border-top: 1px solid #dbdbdb;">
     </div>
-    <div class="root" style="padding-top: 172px; background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom;">
+    <div class="root"
+        style="padding-top: 172px; background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom;">
         <div class="subroot">
-            <h1 style="text-align: center; font-weight: 200; font-family: inter; font-size: 60px; margin-top: 0px; padding-top: 50px;">Al Mawakeb Al Barsha<br>
-                <span style="text-align: center; font-weight: 500; font-family: inter; font-size: 45px;">Model United Nations</span>
+            <h1
+                style="text-align: center; font-weight: 200; font-family: inter; font-size: 60px; margin-top: 0px; padding-top: 50px;">
+                Al Mawakeb Al Barsha<br>
+                <span style="text-align: center; font-weight: 500; font-family: inter; font-size: 45px;">Model United
+                    Nations</span>
             </h1>
-            <h3 style="text-align: center; font-size: 20px; font-family: inter; font-weight: 200;">March 1st & 2nd, 2023</h3>
+            <h3 style="text-align: center; font-size: 20px; font-family: inter; font-weight: 200;">March 1st & 2nd, 2023
+            </h3>
+            <!-- THE HTML PART OF THE CLOCK SHOULD NOT BE MODIFIED, FOR MODIFICATION, MODIFY THE JS PART, CHECK NEXT COMMENT FOR INFO -->
             <div class="centerer">
                 <table>
                     <tr>
@@ -82,7 +88,27 @@
             </div>
         </div>
         <script>
+            // ! THE FOLLOWING FUNCTION IS THE COUNTDOWN FUNCTION, YOU WILL SEE ANOTHER COPY OF IT IN THE SETTIMEOUT FUNCTION, THE FIRST COPY (OUTSIDE THE SETTIMEOUT) IS TO SET THE INITIAL VALUES IMMEDIATELY, THE SETTIMEOUT STARTS THE LOOP FUNCTION
+            // BEGIN COUNTDOWN FUNCTION
             var currentdate = new Date();
+            // The next line is the countdown target, CHANGE ONLY THE STRING
+            // Format for the date func: "<month> <date>, <year> <hour in 24h>:<minute>:<second> GMT<+/-><timezone hour difference>:<timezone minute difference>"
+            var countdowndate = new Date("March 1, 2024 15:00:00 GMT+04:00");
+            const diffTime = Math.abs(countdowndate.getTime() - currentdate.getTime());
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            const diffHours = Math.floor(diffTime / (1000 * 60 * 60) % 24);
+            const diffMinutes = Math.floor(diffTime / (1000 * 60) % 60);
+            const diffSeconds = Math.floor(diffTime / 1000 % 60);
+            // if something goes wrong with the countdown uncomment the next comment to check the current output in the console
+            // console.log(diffDays + " days, " + diffHours + " hours, " + diffMinutes + " minutes, and " + diffSeconds + " seconds");
+            document.getElementById("days").innerText = diffDays;
+            document.getElementById("hours").innerText = diffHours;
+            document.getElementById("minutes").innerText = diffMinutes;
+            document.getElementById("seconds").innerText = diffSeconds;
+            // END COUNTDOWN FUNCTION
+            // NOTE ANY CHANGES MADE TO EITHER FUNCTION MUST ALSO BE APPLIED TO THE OTHER AS INACCURACIES MAY OCCUR
+            setInterval(function () {
+                var currentdate = new Date();
                 var countdowndate = new Date("March 1, 2024 15:00:00 GMT+04:00");
                 const diffTime = Math.abs(countdowndate.getTime() - currentdate.getTime());
                 const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
@@ -94,49 +120,65 @@
                 document.getElementById("hours").innerText = diffHours;
                 document.getElementById("minutes").innerText = diffMinutes;
                 document.getElementById("seconds").innerText = diffSeconds;
-            setInterval(function() {
-            var currentdate = new Date();
-            var countdowndate = new Date("March 1, 2024 15:00:00 GMT+04:00");
-            const diffTime = Math.abs(countdowndate.getTime() - currentdate.getTime());
-            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-            const diffHours = Math.floor(diffTime / (1000 * 60 * 60) % 24);
-            const diffMinutes = Math.floor(diffTime / (1000 * 60) % 60);
-            const diffSeconds = Math.floor(diffTime / 1000 % 60);
-            // console.log(diffDays + " days, " + diffHours + " hours, " + diffMinutes + " minutes, and " + diffSeconds + " seconds");
-            document.getElementById("days").innerText = diffDays;
-            document.getElementById("hours").innerText = diffHours;
-            document.getElementById("minutes").innerText = diffMinutes;
-            document.getElementById("seconds").innerText = diffSeconds;
             }, 1000);
         </script>
     </div>
-    <div class="root" style=" height: 718px; background-image: url(images/Background2.png); background-repeat: no-repeat; background-size: cover;">
+    <!-- this section is not dynamic but editable -->
+    <div class="root"
+        style=" height: 718px; background-image: url(images/Background2.png); background-repeat: no-repeat; background-size: cover;">
         <div class="centerer" style="align-items: center;">
+            <!-- Image for AMB About -->
             <img src="images/SG.png">
-            <p style="width: 466px;">Welcome to the official website of the Al Mawakeb Al Barsha Model United Nations—your gateway to AMBMUN 1.0, the first
-            edition of our prestigious conference.<br><br>The dedicated AMBMUN Executive Board and Team are diligently working to deliver yet another extraordinary and
-            unforgettable conference. From our fantastic volunteers to our accomplished chairs and co-chairs, we are committed to
-            ensuring that your experience as delegates and faculty advisors is not only valuable but also leaves a lasting
-            impression for all your future MUN endeavors. Our team takes great pleasure in what we do, and we invite you to share in
-            this enjoyable experience with us!</p>
+            <!-- About text -->
+            <p style="width: 466px;">Welcome to the official website of the Al Mawakeb Al Barsha Model United
+                Nations—your gateway to AMBMUN 1.0, the first
+                edition of our prestigious conference.<br><br>The dedicated AMBMUN Executive Board and Team are
+                diligently working to deliver yet another extraordinary and
+                unforgettable conference. From our fantastic volunteers to our accomplished chairs and co-chairs, we are
+                committed to
+                ensuring that your experience as delegates and faculty advisors is not only valuable but also leaves a
+                lasting
+                impression for all your future MUN endeavors. Our team takes great pleasure in what we do, and we invite
+                you to share in
+                this enjoyable experience with us!</p>
         </div>
     </div>
+    <!-- This section is dynamic follow next comments for implementation instructions -->
     <div class="root" style="background-color: #E8E8E8; margin-top: -25px; padding: 20px; width: calc( 100% - 40px)">
+        <!-- h2 is not dynamic but editable -->
         <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">Secretariat</h2>
-        <div class="cardrow">
-            <div class="card">
+        <!-- each section must contain a div classed as "cardrow flexcontainer" -->
+        <!-- cardrow class is for centering and flexcontainer is for auto arrangement -->
+        <div class="cardrow flexcontainer">
+            <!-- You can create as many cards as you want, each card must be a div classed as "card" -->
+            <div class="card ">
+                <!-- The card must have only 1 child which is a div classed as "cardcontent" -->
                 <div class="cardcontent">
+                    <!-- centering the image, margin-top to make sure the top of the card doesnt stick to the image -->
                     <div class="centerer" style="margin-top: 20px;">
+                        <!-- image of the card, classed as "cardimage" -->
                         <img class="cardimage" src="images/ExampleCard.png">
                     </div>
+                    <!-- h2 classed as "cardtitle" for title of the card (in this case the name of the person) -->
                     <h2 class="cardtitle">Abdulrahman Alkasab</h2>
+                    <!-- h3 classed as "cardbody" for subtitle of the card (in this case the status of the person) -->
                     <h3 class="cardbody">Secretary-General</h3>
-                    <div class="centerer"><button style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;" onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More Info</button></div>
-                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer Science. In my free time, I
+                    <!-- EVERY CARD WITH MORE INFO MUST CONTAIN THIS BUTTON WITH THE MORE INFO DIV SET AS THE 5TH CHILD, MODIFYABLE PARTS OF THE BUTTON IS THE BUTTON TEXT AND STYLE -->
+                    <div class="centerer"><button
+                            style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;"
+                            onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More
+                            Info</button></div>
+                            <!-- The div classed as "moreinfo" must be the 5th child and should be hidden by default -->
+                            <!-- the div can contain anything you want to be expandable -->
+                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer
+                        Science. In my free time, I
                         enjoy listening to
-                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I have shown great
-                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN head. I am extremely
-                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and skill-enhancing
+                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I
+                        have shown great
+                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN
+                        head. I am extremely
+                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and
+                        skill-enhancing
                         experience for the delegates.
                     </div>
                 </div>
@@ -146,30 +188,38 @@
     </div>
     <div class="root" style="background-color: #E8E8E8; margin-top: -25px; padding: 20px; width: calc( 100% - 40px)">
         <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">AMIC</h2>
-        <div class="cardrow">
+        <div class="cardrow flexcontainer">
             <div class="card">
+                <!-- same as above applies to all cards sitewide -->
                 <div class="cardcontent">
                     <div class="centerer" style="margin-top: 20px;">
                         <img class="cardimage" src="images/ExampleCard.png">
                     </div>
                     <h2 class="cardtitle">Abdulrahman Alkasab</h2>
                     <h3 class="cardbody">Secretary-General</h3>
-                    <div class="centerer"><button style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;" onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More Info</button></div>
-                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer Science. In my free time, I
+                    <div class="centerer"><button
+                            style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;"
+                            onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More
+                            Info</button></div>
+                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer
+                        Science. In my free time, I
                         enjoy listening to
-                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I have shown great
-                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN head. I am extremely
-                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and skill-enhancing
+                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I
+                        have shown great
+                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN
+                        head. I am extremely
+                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and
+                        skill-enhancing
                         experience for the delegates.
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
     <div class="root" style="background-color: #E8E8E8; margin-top: -25px; padding: 20px; width: calc( 100% - 40px)">
         <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">AMRC</h2>
-        <div class="cardrow">
+        <div class="cardrow flexcontainer">
             <div class="card">
                 <div class="cardcontent">
                     <div class="centerer" style="margin-top: 20px;">
@@ -177,25 +227,32 @@
                     </div>
                     <h2 class="cardtitle">Abdulrahman Alkasab</h2>
                     <h3 class="cardbody">Secretary-General</h3>
-                    <div class="centerer"><button style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;" onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More Info</button></div>
-                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer Science. In my free time, I
+                    <div class="centerer"><button
+                            style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;"
+                            onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More
+                            Info</button></div>
+                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer
+                        Science. In my free time, I
                         enjoy listening to
-                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I have shown great
-                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN head. I am extremely
-                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and skill-enhancing
+                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I
+                        have shown great
+                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN
+                        head. I am extremely
+                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and
+                        skill-enhancing
                         experience for the delegates.
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-    
-    
+
+
     <script>
         const el = document.querySelector(".navbar")
         const observer = new IntersectionObserver(
-            ([e]) => {e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1;},
+            ([e]) => { e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1; },
             { threshold: [1] }
         );
 

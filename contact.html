@@ -11,15 +11,15 @@
 
 <body
     style=" background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom; ">
-    <div class="navbar" style="position: relative">
+    <div class="navbar">
         <div class="navbarcontent">
             <div class="subnavbar left">
                 <div id="navbarleft" style="margin-left: 200px; display: flex; align-items: center;">
                     <a>
                         <img src="images/ambmunlogo.png" alt="AMBMUN Logo">
                     </a>
-                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="0.5" y1="30" x2="0.5" stroke="black" />
                     </svg>
                     <a>
@@ -37,7 +37,7 @@
                                 onmouseleave="this.style.display = 'none';">
                                 <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
                                 <a href="rules.html" class="dropdownoptions" style="border-top: none;">RULES</a>
-                                <a href="" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
+                                <a href="committees.html" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
                             </div>
                         </span>
                     </div>
@@ -60,33 +60,45 @@
     <div class="root">
         <div class="subroot" style="padding: 20px; padding-bottom: 400px;">
             <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">Contact Us</h2>
-            <p style="margin-left: 85px;">If you would like to get any more information, please contact us at <a href="mailto:ambmun@amb.sch.ae" style="text-decoration: underline;">ambmun@amb.sch.ae</a>
+            <p style="margin-left: 85px;">If you would like to get any more information, please contact us at <a
+                    href="mailto:ambmun@amb.sch.ae" style="text-decoration: underline;">ambmun@amb.sch.ae</a>
             </p>
             <table style="margin-left: 80px;">
+                <!-- Create a tr for every contact -->
                 <tr>
+                    <!-- Each contact should have 2 td with the first one being for the image and the second one for the contact info -->
                     <td style="padding-right: 0px;">
+                        <!-- image of contact, preserve styling -->
                         <img src="images/Kasab.png" style="width: 100px; height: 100px; margin-right: 25px;">
                     </td>
                     <td style="text-align: left; margin-left: -25px;">
+                        <!-- Name of contact goes here -->
                         <p style="font-family: inter; font-weight: 400; font-size: 18px;">Abdulrahman Alkasab<br>
+                            <!-- Status of the contact is here -->
+                            <!-- The span is INSIDE the p to acheive the newline effect without there being a giant space between and minimizing code as much as possible -->
                             <span style="font-family: inter; font-weight: 200; font-size: 14px;">Secretary-General</span>
                         </p>
+                        <!-- Same thing goes for here -->
+                        <!-- Phone number of contact at root of the p -->
                         <p style="font-family: inter; font-weight: 300; font-size: 14px;">+971 56 123 4567<br>
-                            <span
-                                style="font-family: inter; font-weight: 300; font-size: 14px;">abdulrahman.alkasab@amb.sch.ae</span>
+                            <!-- email of contact should go in child of a and in the href attribute in this format: "mailto:<email>" -->
+                            <a href="mailto:abdulrahman.alkasab@amb.sch.ae" style="font-family: inter; font-weight: 300; font-size: 14px;">abdulrahman.alkasab@amb.sch.ae</a>
                         </p>
                     </td>
                 </tr>
+                <!-- Same info applies here, you can add as many trs as you want -->
                 <tr>
                     <td style="padding-right: 0px;">
                         <img src="images/dana placeholder.png" style="width: 100px; height: 100px; margin-right: 25px;">
                     </td>
                     <td style="text-align: left;">
                         <p style="font-family: inter; font-weight: 400; font-size: 18px;">Dana Ismail<br>
-                            <span style="font-family: inter; font-weight: 200; font-size: 14px;">Deputy Secretary-General</span>
+                            <span style="font-family: inter; font-weight: 200; font-size: 14px;">Deputy
+                                Secretary-General</span>
                         </p>
                         <p style="font-family: inter; font-weight: 300; font-size: 14px;">+971 56 123 4567<br>
-                            <span style="font-family: inter; font-weight: 300; font-size: 14px;">dana.ismail@amb.sch.ae</span>
+                            <span
+                                style="font-family: inter; font-weight: 300; font-size: 14px;">dana.ismail@amb.sch.ae</span>
                         </p>
                     </td>
                 </tr>

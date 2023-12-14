@@ -3,9 +3,22 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>AMBMUN | FAQ</title>
+    <title>AMBMUN | Rules</title>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        td {
+            text-align: left;
+        }
+
+        .alternaterow {
+            background-color: #dbdbdb;
+        }
+
+        .primaryrow {
+            background-color: white;
+        }
+    </style>
     <link rel="icon" href="images/ambmunlogo.png">
 </head>
 
@@ -37,8 +50,7 @@
                                 onmouseleave="this.style.display = 'none';">
                                 <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
                                 <a href="rules.html" class="dropdownoptions" style="border-top: none;">RULES</a>
-                                <a href="committees.html" class="dropdownoptions"
-                                    style="border-top: none;">COMMITTEES</a>
+                                <a href="committees.html" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
                             </div>
                         </span>
                     </div>
@@ -59,26 +71,18 @@
     </div>
 
     <div class="root">
-        <div class="subroot" style="padding: 20px; height: 700px;">
-            <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">Frequently Asked
-                Questions</h2>
-            <!-- FAQ questions can be created with a div like this one with just the question in an h2 and the answer to the question in a p tag -->
-            <!-- NOTE: MAKE SURE THE PARENT DIV IS CLASSED "expandable" AND HAS THE FOLLOWING ONCLICK FUNCTION AND IS DEFAULTED TO HIDDEN -->
-            <div class="expandable" onclick="this.hidden = !this.hidden;" hidden>
-                <h2>What are Model United Nations conferences?</h2>
-                <p>MUN is a simulation of the United Nations in the form of a weekend-long conference that puts students
-                    into scenarios
-                    that represent the organizations directly or indirectly linked to the United Nations. MUN
-                    conferences began as a
-                    student-led Model League of Nations back in the 1920's, and since the formation of the UN it has
-                    transformed into Model
-                    United Nations. The conference largely acts as an academic medium for high-schoolers to discuss and
-                    to have an
-                    understanding of global matters in a political, social and economic sense while also emphasizing and
-                    rewarding
-                    communication and networking skills.</p>
+        <div class="subroot" style="padding: 20px; padding-bottom: 400px;">
+            <!-- Each section has to have a h2 title like this one, a div classed "flexcontainer" (NOTE: THE SECTIONS ARE NOT DYNAMIC. ONLY THE COMMITTEES ARE DYNAMIC. THE SECTION ARE EDITABLE BECAUSE AT THE TIME OF CREATION COMMITTEES WERE UNKNOWN) -->
+            <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">High School</h2>
+            <div class="flexcontainer">
+                <!-- Each committee has to be in a div classed "flexchild" with the following children. You can create as many committees as needed, auto resizing is embedded into the style of the flexchild class -->
+                <div class="flexchild">
+                    <!-- Image for committęe -->
+                    <div class="centerer"><img src="images/placeholder committee.png"></div>
+                    <!-- Name of committee -->
+                    <div class="centerer"><h3 class="comitteename">NATO</h3></div>
+                </div>
             </div>
-            
         </div>
     </div>
 

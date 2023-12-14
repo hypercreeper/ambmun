@@ -56,6 +56,7 @@ a:hover {
 .root {
     width: 100%;
     height: 100%;
+    padding-top: 120px;
 }
 .subroot {
     background-color: rgba(255,255,255,0.9);
@@ -107,8 +108,10 @@ button:active {
 }
 .card {
     aspect-ratio: 20/27;
-    width: 300px;
+    max-width: 300px;
     background-color: white;
+    margin-bottom: 50px;
+    flex-basis: calc( 100% / 3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,4 +179,22 @@ button:active {
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+}
+.flexcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flexchild {
+    flex-basis: calc( 100% / 3);
+}
+@media (max-width: 800px) {
+  .flexcontainer {
+    flex-direction: column;
+  }
+}
+.comitteename {
+    font-family: inter;
+    font-weight: 500;
+    text-align: center;
 }

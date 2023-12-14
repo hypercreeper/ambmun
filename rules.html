@@ -6,12 +6,25 @@
     <title>AMBMUN | Rules</title>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        td {
+            text-align: left;
+        }
+
+        .alternaterow {
+            background-color: #dbdbdb;
+        }
+
+        .primaryrow {
+            background-color: white;
+        }
+    </style>
     <link rel="icon" href="images/ambmunlogo.png">
 </head>
 
 <body
     style=" background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom; ">
-    <div class="navbar" style="position: relative">
+    <div class="navbar">
         <div class="navbarcontent">
             <div class="subnavbar left">
                 <div id="navbarleft" style="margin-left: 200px; display: flex; align-items: center;">
@@ -37,7 +50,8 @@
                                 onmouseleave="this.style.display = 'none';">
                                 <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
                                 <a href="rules.html" class="dropdownoptions" style="border-top: none;">RULES</a>
-                                <a href="" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
+                                <a href="committees.html" class="dropdownoptions"
+                                    style="border-top: none;">COMMITTEES</a>
                             </div>
                         </span>
                     </div>
@@ -59,35 +73,77 @@
 
     <div class="root">
         <div class="subroot" style="padding: 20px; padding-bottom: 400px;">
-            <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">About The AMB Model
-                United Nations</h2>
-            <p style="margin-left: 85px;">Al Mawakeb Al Barsha Model United Nations (AMBMUN) is set to make its mark as
-                the inaugural conference in March 2024.
-                Born out of the passion and dedication of Al Mawakeb Al Barsha students, this conference is poised to be
-                a
-                groundbreaking event in the world of Model United Nations.
-                <br><br>
-                AMBMUN prides itself on its diverse membership, bringing together students from various fields such as
-                Engineering,
-                International Relations, Business, and Media. These students, regardless of their background, join
-                AMBMUN for the
-                unparalleled experience and knowledge gained through engaging in debates, listening actively, and
-                collaboratively
-                solving global issues through resolution.
-                Having drawn inspiration from attending international MUN conferences at prestigious universities,
-                AMBMUN members have
-                not only expanded their knowledge but have also actively contributed to regional conferences, creating a
-                dynamic network
-                within the Model UN community.
-                <br><br>
-                As March 2024 approaches, the anticipation for the inaugural AMBMUN conference builds. The decision to
-                host this event
-                reflects the club's commitment to providing an authentic UN experience for its members and further
-                solidifying its
-                position as a prominent regional hub for Model United Nations enthusiasts. Here's to the upcoming
-                inaugural AMBMUN and
-                the exciting journey that lies ahead!
-            </p>
+            <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">AMB Model United
+                Nations 2023 Rules of Procedure</h2>
+            <p style="margin-left: 85px;">The following are the rules of procedure for AMBMUN 2023 which will be
+                followed in all committees unless specified by
+                the committee chairs.</p>
+                <!-- Again, rules aren't really dynamic but editable when needed, current rules are sourced from https://audmun.org/info.asp?id=4 -->
+            <table cellspacing="0" cellpadding="20" style="margin-left: 85px; margin-right: 85px;">
+                <tr style="background-color: rgb(0, 214, 214);">
+                    <th style="border-bottom: 1px solid rgb(151, 151, 151);">Name of Motion</th>
+                    <th style="border-bottom: 1px solid rgb(151, 151, 151);">When it's used</th>
+                    <th style="border-bottom: 1px solid rgb(151, 151, 151);">What Happens</th>
+                    <th style="border-bottom: 1px solid rgb(151, 151, 151);">Extra Note(s)</th>
+                </tr>
+                <tr class="alternaterow">
+                    <td>Motion to set the agenda "Motion to set the agenda to …"</td>
+                    <td>Used in the very beginning of the debate. It sets the debate to a certain topic to be discussed.
+                    </td>
+                    <td>1 delegate from each side would state points for and against each topic. Voting will then take
+                        place and it will pass/fail accordingly.</td>
+                    <td>Requires a simple majority to pass this motion.</td>
+                </tr>
+                <tr class="primaryrow">
+                    <td>Motion to set the speaker's list "Motion to set the speakers list to [insert topic] to [insert
+                        time] seconds/minutes"</td>
+                    <td>After the agenda has been set, it helps start the debate formally.</td>
+                    <td>The motion is made, and a time for each speaker is set and adhered to, until another motion is
+                        made.</td>
+                    <td>Requires a simple majority in order to pass this motion.</td>
+                </tr>
+                <tr class="alternaterow">
+                    <td>Motion to move to a moderated caucus "Motion to move to moderated caucus of ... minutes of ...
+                        speaker time to discuss ..."</td>
+                    <td>When delegates wish to change the form of the debate to a moderated caucus (see meaning below)
+                        about a certain topic for a certain time.</td>
+                    <td>The overall time for the debate is set and voted upon about a certain topic</td>
+                    <td>Requires a simple majority. Time can be extended by follow-up motions or by the chair if s/he
+                        sees the topic relevant or interesting.</td>
+                </tr>
+                <tr class="primaryrow">
+                    <td>Motion to move to unmoderated caucus "Motion to move to unmoderated caucus about ... for ...
+                        minutes"</td>
+                    <td>Used when delegates wish to change the debate to unmoderated caucus (see meaning below)</td>
+                    <td>The overall time and topic is set. Usually, delegates will use this time to write up
+                        resolutions, clauses, etc.</td>
+                    <td>Requires a simple majority to pass and time can be extended.</td>
+                </tr>
+                <tr class="alternaterow">
+                    <td>Motion to adjourn the meeting "Motion to adjourn/recess the meeting for the purpose of ..."</td>
+                    <td>Used when the delegates wish to end the debating session. Usually used at the end of the day.
+                    </td>
+                    <td>The reason for adjourning of the meeting is stated and voted upon.</td>
+                    <td>Requires a simple majority to pass.</td>
+                </tr>
+                <tr class="primaryrow">
+                    <td>Motion to recess the meeting "Motion to recess the meeting for ..."</td>
+                    <td>Used when the delegates wish to have a break from the debate, usually for lunch break.</td>
+                    <td>The reason to recess and the amount of time is set and it is voted upon.</td>
+                    <td>Requires a simple majority to pass, if the chair sees fit.</td>
+                </tr>
+                <tr class="alternaterow">
+                    <td>Motion to move to voting procedure "Motion to move to voting procedure on
+                        [resolution/amendment]"</td>
+                    <td>When delegates wish to move on from the debate and vote on the resolution/amendment that is
+                        being discussed.</td>
+                    <td>The committee moves to voting procedures and pass/fail the resolution, if the chair sees fit.
+                    </td>
+                    <td>To pass, the chair sees if there are anyone who seconds and anyone who opposes the motion, and
+                        moves accordingly. If there are several opposing votes, the motion does not pass. No one is
+                        allowed to leave or enter the room when voting is taking place.</td>
+                </tr>
+            </table>
         </div>
     </div>
 

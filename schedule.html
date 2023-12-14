@@ -9,16 +9,17 @@
     <link rel="icon" href="images/ambmunlogo.png">
 </head>
 
-<body style=" background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom; ">
-    <div class="navbar" style="position: relative">
+<body
+    style=" background-image: url(images/Background.png); background-repeat: no-repeat; background-size: cover; background-position: center bottom; ">
+    <div class="navbar">
         <div class="navbarcontent">
             <div class="subnavbar left">
                 <div id="navbarleft" style="margin-left: 200px; display: flex; align-items: center;">
                     <a>
                         <img src="images/ambmunlogo.png" alt="AMBMUN Logo">
                     </a>
-                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg style="margin-left: 20px; margin-right: 20px;" width="1" height="30" viewBox="0 0 1 30"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <line x1="0.5" y1="30" x2="0.5" stroke="black" />
                     </svg>
                     <a>
@@ -36,7 +37,8 @@
                                 onmouseleave="this.style.display = 'none';">
                                 <a href="schedule.html" class="dropdownoptions">SCHEDULE</a>
                                 <a href="rules.html" class="dropdownoptions" style="border-top: none;">RULES</a>
-                                <a href="" class="dropdownoptions" style="border-top: none;">COMMITTEES</a>
+                                <a href="committees.html" class="dropdownoptions"
+                                    style="border-top: none;">COMMITTEES</a>
                             </div>
                         </span>
                     </div>
@@ -55,68 +57,90 @@
         <br>
         <hr id="navbarseparator" style="margin-left: 100px; margin-right: 100px; border-top: 1px solid #dbdbdb;">
     </div>
-    
+
     <div class="root">
         <div class="subroot" style="padding: 20px; padding-bottom: 200px;">
             <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">Schedule</h2>
             <div class="centerer">
+                <!-- HTML SHOULD NOT BE TOUCHED, THE DYNAMIC PART IS IN THE JS DOWN BELOW, CHECK NEXT COMMENT -->
                 <img id="day1" src="images/Schedule/Day 1_none.png" style="margin-right: 150px;">
                 <img id="day2" src="images/Schedule/Day 2_none.png">
             </div>
         </div>
     </div>
-    
-    
+
+
     <script>
+        // Header code, not part of the dynamic code
         const el = document.querySelector(".navbar")
         const observer = new IntersectionObserver(
-            ([e]) => {e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1;},
+            ([e]) => { e.target.classList.toggle("issticky", e.intersectionRatio < 1); document.getElementById("navbarseparator").hidden = e.intersectionRatio < 1; },
             { threshold: [1] }
         );
 
         observer.observe(el);
-
-var day1 = document.getElementById("day1");
-var day2 = document.getElementById("day2");
-        setInterval(function() {
+        // End header code, dynamic code begins on the next line
+        // Day1 and Day2 images targeted
+        var day1 = document.getElementById("day1");
+        var day2 = document.getElementById("day2");
+        // background loop to check for current status of schedule
+        setInterval(function () {
             var cd = new Date();
-            if(cd.getDate() == 1 && cd.getMonth() == 2 && cd.getFullYear() == 2024) {
+            // According to provided info, the first conference will begin at March 1st, 2024 (NOTE: ALL TIME IS REFERENCED IN 24HOUR FORMAT)
+            // Following if statement checks for that date
+            // | Make sure it is 1| Make sure it is march| make sure it is 2024
+            if (cd.getDate() == 1 && cd.getMonth() == 2 && cd.getFullYear() == 2024) {
+                // Replace day2 schedule with not yet started image
                 day2.src = "images/Schedule/Day 2_none.png";
-                if(cd.getHours() == 15 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                //  3:00PM - 3:30PM   MARCH 1
+                if (cd.getHours() == 15 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
                     day1.src = "images/Schedule/Day 1_first_pending.png";
                 }
-                else if(cd.getHours() == 15 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                // 3:31PM - 3:59PM   MARCH 1
+                else if (cd.getHours() == 15 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
                     day1.src = "images/Schedule/Day 1_second_pending.png";
                 }
-                else if(cd.getHours() == 16 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                // 4:00PM - 4:30PM   MARCH 1
+                else if (cd.getHours() == 16 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
                     day1.src = "images/Schedule/Day 1_third_pending.png";
                 }
-                else if(cd.getHours() == 16 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                // 4:31PM - 4:59PM   MARCH 1
+                else if (cd.getHours() == 16 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
                     day1.src = "images/Schedule/Day 1_fourth_pending.png";
                 }
+                // After 5:00 PM, Day 1 is marked as complete
                 else {
                     day1.src = "images/Schedule/Day 1_complete.png";
                 }
             }
-            else if(cd.getDate() == 2 && cd.getMonth() == 2 && cd.getFullYear() == 2024) {
+            // March 2nd, 2024
+            //      | Make sure it is 2| Make sure it is march| make sure it is 2024
+            else if (cd.getDate() == 2 && cd.getMonth() == 2 && cd.getFullYear() == 2024) {
+                // Make sure day1 is marked as complete
                 day1.src = "images/Schedule/Day 1_complete.png";
-                if(cd.getHours() == 15 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                //  3:00PM - 3:30PM   MARCH 2
+                if (cd.getHours() == 15 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
                     day2.src = "images/Schedule/Day 2_first_pending.png";
                 }
-                else if(cd.getHours() == 15 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                // 3:31PM - 3:59PM   MARCH 1
+                else if (cd.getHours() == 15 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
                     day2.src = "images/Schedule/Day 2_second_pending.png";
                 }
-                else if(cd.getHours() == 16 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
+                // 4:00PM - 4:30PM   MARCH 1
+                else if (cd.getHours() == 16 && cd.getMinutes() >= 0 && cd.getMinutes() < 31) {
                     day2.src = "images/Schedule/Day 2_third_pending.png";
                 }
-                else if(cd.getHours() == 16 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
+                // 4:31PM - 4:59PM   MARCH 1
+                else if (cd.getHours() == 16 && cd.getMinutes() >= 31 && cd.getMinutes() <= 59) {
                     day2.src = "images/Schedule/Day 2_fourth_pending.png";
                 }
+                // After 5:00 PM, Day 2 is marked as complete
                 else {
                     day2.src = "images/Schedule/Day 2_complete.png";
                 }
             }
             else {
+                // on the occasion that neither date is met, no modification is made (day1 not complete and day2 not complete images are shown by default as set in the HTML) and current date is reported to the console
                 console.log(cd);
                 console.log("Date:", cd.getDate(), cd.getDate() == 1)
                 console.log("Month:", cd.getMonth(), cd.getMonth() == 3)
