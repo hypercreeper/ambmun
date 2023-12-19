@@ -13,6 +13,7 @@ body {
     background-color: rgba(255,255,255,.9);
     padding-bottom: 50px;
     transition-duration: 0.5s;
+    z-index: 5;
 }
 .navbar.issticky {
     background-color: rgba(255,255,255,1);
@@ -162,6 +163,10 @@ button:active {
     transition-duration: 0.3s, 0.3s, 0.1s;
     cursor: pointer;
 }
+.expandable.large {
+    max-height: 1520px;
+    border-bottom: none;
+}
 .expandable:active {
     background-color: rgba(168, 168, 168, 0.1);
 }
@@ -170,6 +175,12 @@ button:active {
     padding-top: 0px;
     padding-bottom: 0px;
     max-height: 50px;
+}
+.expandable.large[hidden] {
+    display: block;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-height: 420px;
 }
 .dropdownoptions {
     width: 140px;
@@ -209,6 +220,6 @@ button:active {
 footer {
     background-color: black;
 }
-p {
+p, h1, h2, h3, h4, h5, h6, div, span {
     font-family: inter;
 }

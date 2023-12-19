@@ -72,27 +72,99 @@
     </div>
 
     <div class="root">
-        <div class="subroot" style="padding: 20px; padding-bottom: 400px;">
+        <div class="subroot" style="padding: 20px; min-height: 700px;">
             <!-- Each section has to have a h2 title like this one, a div classed "flexcontainer" (NOTE: THE SECTIONS ARE NOT DYNAMIC. ONLY THE COMMITTEES ARE DYNAMIC. THE SECTION ARE EDITABLE BECAUSE AT THE TIME OF CREATION COMMITTEES WERE UNKNOWN) -->
             <h2 style="font-family: inter; font-weight: 500; font-size: 30px; margin-left: 85px;">High School</h2>
             <div class="flexcontainer">
                 <!-- Each committee has to be in a div classed "flexchild" with the following children. You can create as many committees as needed, auto resizing is embedded into the style of the flexchild class -->
-                <div class="flexchild">
+                <div class="flexchild expandable large" onclick="if(event.srcElement.nodeName != 'BUTTON') {this.hidden = !this.hidden;}" hidden>
                     <!-- Image for committęe -->
                     <div class="centerer"><img src="images/placeholder committee.png"></div>
                     <!-- Name of committee -->
                     <div class="centerer">
                         <h3 class="comitteename">NATO</h3>
                     </div>
-                </div>
-                <div class="flexchild">
-                    <!-- Image for committęe -->
-                    <div class="centerer"><img src="images/placeholder committee.png"></div>
-                    <!-- Name of committee -->
-                    <div class="centerer">
-                        <h3 class="comitteename">NATO</h3>
+                    <div>
+                        <!-- Description of committee -->
+                        <p>An economic and political union between 27 European countries that work for the principles of
+                            Freedom, Democracy,
+                            Equality, and Law that promotes peace and stability in the EU, and the upholding of past
+                            treaties founded in the EU.</p>
+                        <!-- Topics -->
+                        <h2>Topics</h2>
+                        <ol>
+                            <li>Topic 1</li>
+                            <li>Topic 2</li>
+                        </ol>
+                        <h2>Meet The Chair</h2>
+                        <div class="cardrow flexcontainer">
+                            <div class="card " style="margin-right: 15px;">
+                                <!-- The card must have only 1 child which is a div classed as "cardcontent" -->
+                                <div class="cardcontent">
+                                    <!-- centering the image, margin-top to make sure the top of the card doesnt stick to the image -->
+                                    <div class="centerer">
+                                        <!-- image of the card, classed as "cardimage" -->
+                                        <img class="cardimage" src="images/ExampleCard.png">
+                                    </div>
+                                    <!-- h2 classed as "cardtitle" for title of the card (in this case the name of the person) -->
+                                    <h2 class="cardtitle">Abdulrahman Alkasab</h2>
+                                    <!-- h3 classed as "cardbody" for subtitle of the card (in this case the status of the person) -->
+                                    <h3 class="cardbody">Secretary-General</h3>
+                                    <!-- EVERY CARD WITH MORE INFO MUST CONTAIN THIS BUTTON WITH THE MORE INFO DIV SET AS THE 5TH CHILD, MODIFYABLE PARTS OF THE BUTTON IS THE BUTTON TEXT AND STYLE -->
+                                    <div class="centerer"><button style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;"
+                                            onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More
+                                            Info</button></div>
+                                    <!-- The div classed as "moreinfo" must be the 5th child and should be hidden by default -->
+                                    <!-- the div can contain anything you want to be expandable -->
+                                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer
+                                        Science. In my free time, I
+                                        enjoy listening to
+                                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I
+                                        have shown great
+                                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN
+                                        head. I am extremely
+                                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and
+                                        skill-enhancing
+                                        experience for the delegates.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card ">
+                                <!-- The card must have only 1 child which is a div classed as "cardcontent" -->
+                                <div class="cardcontent">
+                                    <!-- centering the image, margin-top to make sure the top of the card doesnt stick to the image -->
+                                    <div class="centerer">
+                                        <!-- image of the card, classed as "cardimage" -->
+                                        <img class="cardimage" src="images/ExampleCard.png">
+                                    </div>
+                                    <!-- h2 classed as "cardtitle" for title of the card (in this case the name of the person) -->
+                                    <h2 class="cardtitle">Abdulrahman Alkasab</h2>
+                                    <!-- h3 classed as "cardbody" for subtitle of the card (in this case the status of the person) -->
+                                    <h3 class="cardbody">Secretary-General</h3>
+                                    <!-- EVERY CARD WITH MORE INFO MUST CONTAIN THIS BUTTON WITH THE MORE INFO DIV SET AS THE 5TH CHILD, MODIFYABLE PARTS OF THE BUTTON IS THE BUTTON TEXT AND STYLE -->
+                                    <div class="centerer"><button style="height: 14px; font-size: 8px; margin-top: 10px; margin-bottom: 10px;"
+                                            onclick="this.parentElement.parentElement.children[4].hidden = !this.parentElement.parentElement.children[4].hidden;">More
+                                            Info</button></div>
+                                    <!-- The div classed as "moreinfo" must be the 5th child and should be hidden by default -->
+                                    <!-- the div can contain anything you want to be expandable -->
+                                    <div class="moreinfo" hidden>I'm Jana, an Egyptian who is a Junior. I aspire to major in Computer
+                                        Science. In my free time, I
+                                        enjoy listening to
+                                        music, talking to my friends, and baking. I began my journey of MUN in my middle school years, I
+                                        have shown great
+                                        dedication to MUN, participating in many conferences and I have built myself up to being a YMUN
+                                        head. I am extremely
+                                        excited to make AMBMUN a once-in-a-lifetime experience for others and provide an enjoyable and
+                                        skill-enhancing
+                                        experience for the delegates.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
